@@ -391,5 +391,26 @@ TOGGLE = ('\n<!-- REVIEW TOGGLE: mockup only, remove before go-live -->\n'
           '<script>(function(){function s(){var t=document.getElementById("nf-review-toggle");if(t)document.documentElement.style.setProperty("--nf-rt-h",t.offsetHeight+"px")}s();window.addEventListener("load",s);window.addEventListener("resize",s)})();</script>\n')
 h = re.sub(r'(<body\b[^>]*>)', lambda m: m.group(1) + TOGGLE, h, count=1)
 
+# ---------------- embedded forms: freeze as static snapshots ----------------
+# The saved LeadConnector forms are Nuxt server-rendered snapshots. Their scripts try to
+# hydrate from a URL that doesn't exist on GitHub Pages, fail, and reload the iframe in a
+# loop (flicker between the form and a 500 error). Strip all scripts so the form renders
+# once as a static preview, and drop the parent-page embed script that re-initialises it.
+import os
+h = re.sub(r'<script\b[^>]*src="assets/form_embed\.js"[^>]*>\s*</script>\s*', '', h)
+_site_dir = os.path.dirname(os.path.abspath(OUT))
+for _src in sorted(set(re.findall(r'<iframe\b[^>]*\bsrc="(assets/[^"]+\.html)"', h))):
+    _fp = os.path.join(_site_dir, _src)
+    if not os.path.exists(_fp):
+        continue
+    _f = open(_fp, encoding='utf-8', errors='ignore').read()
+    _f2 = re.sub(r'<script\b[^>]*>.*?</script>', '', _f, flags=re.S)
+    _f2 = re.sub(r'<script\b[^>]*/>', '', _f2)
+    _f2 = re.sub(r'<link\b[^>]*rel="modulepreload"[^>]*>', '', _f2)
+    if '<meta name="robots"' not in _f2:
+        _f2 = _f2.replace('<head>', '<head><meta name="robots" content="noindex, nofollow">', 1)
+    if _f2 != _f:
+        open(_fp, 'w', encoding='utf-8').write(_f2)
+
 open(OUT, 'w', encoding='utf-8').write(h)
 print('written', OUT, len(h))
