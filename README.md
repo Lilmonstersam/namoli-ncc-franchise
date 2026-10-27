@@ -39,7 +39,7 @@ registration shortcode currently renders as plain text).
 .github/workflows/deploy.yml   GitHub Actions: builds both versions and deploys /site to Pages
 scripts/build_page.py          Builds a version from the source capture
 source/franchise-original.html Saved capture of the live page (input)
-site/                          Deployed output (index.html, no-pricing.html, assets/)
+site/                          Deployed output (index.html = logged out, member.html = logged in, assets/)
 ```
 
 ## Build locally
