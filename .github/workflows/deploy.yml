@@ -26,10 +26,10 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Build both mockup versions from source
+      - name: Build logged-out and logged-in views from source
         run: |
-          python scripts/build_page.py source/franchise-original.html site/index.html
-          python scripts/build_page.py source/franchise-original.html site/no-pricing.html nopricing
+          python scripts/build_page.py source/franchise-original.html site/index.html nopricing
+          python scripts/build_page.py source/franchise-original.html site/member.html
 
       - name: Configure Pages
         uses: actions/configure-pages@v5

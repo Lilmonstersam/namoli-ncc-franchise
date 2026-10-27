@@ -65,14 +65,16 @@ faqs = [
   "No. Namoli franchisees service a wide range of commercial clients, including offices, medical centres, childcare facilities, schools, industrial sites, retail and hospitality venues, provided they meet any required compliance or industry-specific standards."),
 ]
 
+faqs_guest = list(faqs)
+faqs_guest[0] = (faqs[0][0], "Your investment depends on the tier you choose, which sets the value of client contracts you start with. Every tier includes the commercial products start-up kit. Ongoing fees are a percentage of gross revenue plus small annual marketing and IT levies. Outside the franchise, budget for your vehicle, insurance, wages if you hire staff, and accounting. Members can log in to view the full investment schedule, or request the Franchise Information Guide. All franchise fees are set out in the Disclosure Document before you sign.")
+faqs_guest[1] = (faqs[1][0], "Ongoing fees cover a royalty, account administration and operations support, charged as a percentage of gross revenue, plus annual marketing and IT levies. The exact figures are in the Franchise Information Guide and the Disclosure Document.")
+faqs_guest[2] = (faqs[2][0], "It can be, but profit depends on your pricing, hours and labour costs, not revenue alone. After franchise fees, the rest of your revenue covers wages, consumables, your vehicle, insurance and tax. Commercial contracts are recurring, which makes income more predictable than one-off residential jobs. Model your numbers with an accountant using the Disclosure Document.")
 if NP:
-    faqs[0] = (faqs[0][0], "Your investment depends on the tier you choose, which sets the value of client contracts you start with. Every tier includes the commercial products start-up kit. Ongoing fees are a percentage of gross revenue plus small annual marketing and IT levies. Outside the franchise, budget for your vehicle, insurance, wages if you hire staff, and accounting. Request the Franchise Information Guide for the full schedule. All franchise fees are set out in the Disclosure Document before you sign.")
-    faqs[1] = (faqs[1][0], "Ongoing fees cover a royalty, account administration and operations support, charged as a percentage of gross revenue, plus annual marketing and IT levies. The exact figures are in the Franchise Information Guide and the Disclosure Document.")
-    faqs[2] = (faqs[2][0], "It can be, but profit depends on your pricing, hours and labour costs, not revenue alone. After franchise fees, the rest of your revenue covers wages, consumables, your vehicle, insurance and tax. Commercial contracts are recurring, which makes income more predictable than one-off residential jobs. Model your numbers with an accountant using the Disclosure Document.")
+    faqs = faqs_guest
 
-TITLE = 'Office Cleaning Franchise Brisbane &amp; Queensland | Namoli' if NP else 'Office Cleaning Franchise Brisbane &amp; QLD | From $24,400 + GST | Namoli'
-DESC = ("Own a Namoli office cleaning franchise anywhere in Queensland. Start with client contracts and a start-up kit included, specialist training and a 5-step path." if NP
-        else "Own a Namoli office cleaning franchise from $24,400 + GST with $1,500/month in client contracts included. See all 10 tiers, every fee and the 5-step path.")
+# Gated model: search engines only ever see the logged-out page, so title, meta and FAQ schema are price-free in both views
+TITLE = 'Office Cleaning Franchise Brisbane &amp; Queensland | Namoli'
+DESC = "Own a Namoli office cleaning franchise anywhere in Queensland. Start with client contracts and a start-up kit included, specialist training and a 5-step path."
 
 # ---------------- head ----------------
 rep('<title>Franchise - Namoli</title>',
@@ -81,7 +83,7 @@ rep('og:title" content="Franchise"', 'og:title" content="' + TITLE + '"')
 h = re.sub(r'og:description" content="[^"]*"', lambda m: 'og:description" content="' + DESC + '"', h, count=1)
 
 faq_ld = {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-  {"@type":"Question","name":q,"acceptedAnswer":{"@type":"Answer","text":a}} for q,a in faqs]}
+  {"@type":"Question","name":q,"acceptedAnswer":{"@type":"Answer","text":a}} for q,a in faqs_guest]}
 
 CSS = r'''
 <style id="nf-optimised">
@@ -102,6 +104,31 @@ main .wp-block-group.client-grid .nf-marquee-track > figure img{width:100% !impo
 #contact-form .ep-iFrameContainer{position:relative}
 #contact-form .ep-iFrameContainer::after{content:"Form preview only: submissions are disabled in this mockup";position:absolute;inset:0;display:flex;align-items:flex-start;justify-content:center;padding-top:10px;background:rgba(255,255,255,0);color:#003b5c;font-size:13px;font-weight:700;cursor:not-allowed}
 html{margin-top:0 !important}
+/* Gated pricing */
+#franchise-cost{scroll-margin-top:calc(var(--nf-rt-h,52px) + 190px)}
+.nf-gate{position:relative;max-width:980px;margin:0 auto;border-radius:16px;overflow:hidden;border:1px solid #d1dae2;background:#fff}
+.nf-gate-teaser{filter:blur(5px);opacity:.55;pointer-events:none;user-select:none}
+.nf-gate-teaser table.nf-table thead tr th{white-space:nowrap}
+.nf-gate-card{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px;background:linear-gradient(180deg,rgba(255,255,255,.55),rgba(255,255,255,.92))}
+.nf-gate-lock{display:flex !important;align-items:center;justify-content:center;flex:0 0 48px;width:48px !important;height:48px !important;min-height:48px;box-sizing:border-box;border-radius:50%;background:#003b5c;color:#fff;margin-bottom:12px;line-height:1}
+.nf-gate-lock svg{width:22px !important;height:22px !important;flex:0 0 22px}
+.nf-gate-card .nf-k{color:#f45b69;font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase}
+.nf-gate-card h3{color:#003b5c;font-size:22px;font-weight:700;margin:6px 0 8px}
+.nf-gate-card p{color:#3a596e;font-size:15px;line-height:1.6;max-width:520px;margin:0 auto 16px}
+.nf-gate-btns{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-bottom:14px}
+.nf-btn{display:inline-block;padding:13px 20px;border-radius:5px;font-weight:700;font-size:16px;text-decoration:none;line-height:1.2;transition:background .2s,color .2s,border-color .2s}
+.nf-btn-primary{background:#f45b69;color:#fff;border:1px solid #f45b69}
+.nf-btn-primary:hover,.nf-btn-primary:focus{background:#003b5c;border-color:#003b5c;color:#fff}
+.nf-btn-ghost{background:#fff;color:#003b5c;border:1px solid #003b5c}
+.nf-btn-ghost:hover,.nf-btn-ghost:focus{background:#003b5c;color:#fff}
+.nf-gate-card p.nf-gate-alt{font-size:14px;margin-bottom:6px}
+.nf-gate-alt a{color:#d64d63;font-weight:700}
+.nf-gate-card p.nf-mock-note{font-size:12px;color:#64748b;font-style:italic;margin:0}
+.nf-member-banner{display:flex;align-items:center;justify-content:center;gap:8px;max-width:620px;margin:0 auto 22px;padding:10px 16px;border-radius:8px;background:#e8f5ec;color:#1f6b3a;font-weight:700;font-size:15px;text-align:center}
+.nf-member-banner span{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;background:#1f6b3a;color:#fff;font-size:13px}
+.nf-tag-row{text-align:center;margin:0 0 10px}
+.nf-tag{display:inline-block;vertical-align:middle;padding:3px 10px;border-radius:999px;background:#fff1f3;color:#d64d63;font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+@media (max-width:767px){.nf-gate-card{position:relative;inset:auto;background:#fff}.nf-gate-teaser{display:none}.nf-gate-card h3{font-size:19px}}
 /* Review toggle (mockup only) */
 html{margin-top:var(--nf-rt-h,52px) !important}
 header{top:var(--nf-rt-h,52px) !important}
@@ -190,6 +217,7 @@ guide_link = '<div class="guide-link-wrap" style="width:auto"><a href="https://w
 COST = f'''
 <section class="nf-section" id="franchise-cost" aria-labelledby="nf-cost-h">
 <div class="nf-wrap">
+<p class="nf-member-banner"><span>&#10003;</span> You&rsquo;re logged in. The full investment schedule is unlocked.</p>
 <p class="nf-eyebrow">Your investment</p>
 <h2 class="nf-h2" id="nf-cost-h">How Much Does an Office Cleaning Franchise Cost?</h2>
 <p class="nf-lead">Most cleaning franchisors publish a &ldquo;from&rdquo; price with an asterisk. We publish the full schedule. Choose how much client revenue you start with and your initial investment scales with it. Every tier includes the same four things:</p>
@@ -201,6 +229,7 @@ COST = f'''
 <div class="nf-card"><span class="nf-k">Built into your fees</span><h3>Admin and operations backing</h3><p>Account administration and operations support sit behind every contract, so you focus on the work and the client relationship.</p></div>
 </div>
 
+<p class="nf-tag-row"><span class="nf-tag">Members only</span></p>
 <div class="nf-table-wrap">
 <table class="nf-table nf-tiers">
 <caption class="screen-reader-text">Namoli franchise tier pricing schedule, all figures exclude GST</caption>
@@ -216,7 +245,7 @@ COST = f'''
 <div class="nf-stat"><strong>14 days</strong><span>Minimum gap between your disclosure meeting and investing. Time to get independent advice, by design.</span></div>
 </div>
 
-<h3 class="nf-h3">Ongoing Franchise Fees, in Plain Numbers</h3>
+<h3 class="nf-h3">Ongoing Franchise Fees, in Plain Numbers <span class="nf-tag">Members only</span></h3>
 <div class="nf-split">
 <div class="nf-table-wrap">
 <table class="nf-table">
@@ -247,6 +276,7 @@ COST = f'''
 </div>
 </section>
 '''
+TEASER = ''.join('<tr><td>Tier {}</td><td>$#,###</td><td>$##,###</td><td>$##,###</td></tr>'.format(t) for t in range(1, 9))
 if NP:
     COST = f'''
 <section class="nf-section" id="franchise-cost" aria-labelledby="nf-cost-h">
@@ -260,10 +290,17 @@ if NP:
 <div class="nf-card"><span class="nf-k">No experience needed</span><h3>Specialist training</h3><p>Commercial cleaning methods, infection control, workplace health and safety, industry standards and how to run a small business.</p></div>
 <div class="nf-card"><span class="nf-k">Built into your fees</span><h3>Admin and operations backing</h3><p>Account administration and operations support sit behind every contract, so you focus on the work and the client relationship.</p></div>
 </div>
-<div class="nf-example" style="max-width:860px;margin:0 auto;text-align:center">
-<span class="nf-k">Full investment schedule</span>
-<p style="font-size:17px">Get the tier-by-tier investment, ongoing fees and a worked example in the Franchise Information Guide, or talk them through with our Franchise Manager on a discovery call.</p>
-<p style="margin:0">Every fee is set out in the Disclosure Document, with a minimum of 14 days to get independent advice before you invest.</p>
+<div class="nf-gate">
+<div class="nf-gate-teaser" aria-hidden="true"><table class="nf-table"><thead><tr><th>Tier</th><th>Starting monthly contracts</th><th>Annual contract value</th><th>Initial investment</th></tr></thead><tbody>{TEASER}</tbody></table></div>
+<div class="nf-gate-card">
+<span class="nf-gate-lock" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></span>
+<span class="nf-k">Members only</span>
+<h3>See the full investment schedule</h3>
+<p>Log in or create a free account to view all 10 investment tiers, the ongoing fee breakdown and a worked example.</p>
+<div class="nf-gate-btns"><a class="nf-btn nf-btn-primary" href="member.html#franchise-cost">Log in to view pricing</a><a class="nf-btn nf-btn-ghost" href="member.html#franchise-cost">Create an account</a></div>
+<p class="nf-gate-alt">Prefer to talk it through? <a href="#contact-form">Request a discovery call</a> or download the Franchise Information Guide.</p>
+<p class="nf-mock-note">Mockup: both buttons preview the logged-in view. Live: /member-login/ and /register/.</p>
+</div>
 </div>
 <div class="nf-ctas">{btn_primary}{guide_link}</div>
 </div>
@@ -381,13 +418,19 @@ _dupes = [f.replace('<figure ', '<figure aria-hidden="true" ', 1).replace(' alt=
 _track = '<div class="nf-marquee-track">' + ''.join(_figs) + ''.join(_dupes) + '</div>\n'
 h = h[:_cg.start()] + _cg.group(1)[:-1] + ' nf-marquee"' + _cg.group(2) + _track + _cg.group(4) + h[_cg.end():]
 
+# ---------------- header login link: simulate member state ----------------
+if NP:
+    h = h.replace('<a href="https://www.namoli.com.au/member-login/">Login</a>', '<a href="member.html#franchise-cost">Login</a>')
+else:
+    h = h.replace('<a href="https://www.namoli.com.au/member-login/">Login</a>', '<a href="index.html">Log out</a>')
+
 # ---------------- review toggle (mockup only) ----------------
-_cur_p, _cur_np = ('', ' aria-current="page"') if NP else (' aria-current="page"', '')
+_cur_out, _cur_in = (' aria-current="page"', '') if NP else ('', ' aria-current="page"')
 TOGGLE = ('\n<!-- REVIEW TOGGLE: mockup only, remove before go-live -->\n'
           '<div id="nf-review-toggle" role="region" aria-label="Mockup version toggle">'
-          '<span class="nf-rt-label">Client review</span>'
-          '<span class="nf-rt-switch"><a href="index.html"' + _cur_p + '>With pricing</a><a href="no-pricing.html"' + _cur_np + '>Without pricing</a></span>'
-          '<span class="nf-rt-note">This toggle is for review only and is not included when the page goes live.</span></div>\n'
+          '<span class="nf-rt-label">Gated pricing preview</span>'
+          '<span class="nf-rt-switch"><a href="index.html"' + _cur_out + '>Logged out (public)</a><a href="member.html"' + _cur_in + '>Logged in (member)</a></span>'
+          '<span class="nf-rt-note">Simulates the member login for review. This toggle is not included when the page goes live.</span></div>\n'
           '<script>(function(){function s(){var t=document.getElementById("nf-review-toggle");if(t)document.documentElement.style.setProperty("--nf-rt-h",t.offsetHeight+"px")}s();window.addEventListener("load",s);window.addEventListener("resize",s)})();</script>\n')
 h = re.sub(r'(<body\b[^>]*>)', lambda m: m.group(1) + TOGGLE, h, count=1)
 
