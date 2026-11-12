@@ -2686,6 +2686,30 @@ html{margin-top:0 !important}
 .nf-tag-row{text-align:center;margin:0 0 10px}
 .nf-tag{display:inline-block;vertical-align:middle;padding:3px 10px;border-radius:999px;background:#fff1f3;color:#d64d63;font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
 @media (max-width:767px){.nf-gate-card{position:relative;inset:auto;background:#fff}.nf-gate-teaser{display:none}.nf-gate-card h3{font-size:19px}}
+.nf-mock-submit{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px 14px;margin:14px 0 4px;padding:12px;border:1px dashed #f45b69;border-radius:8px;background:#fff7f8}
+.nf-mock-submit span{font-size:12px;color:#64748b;font-style:italic}
+.franchise-iframe{min-height:446px}
+.franchise-box{margin-top:calc(var(--nf-rt-h,52px) + 16px) !important;max-height:calc(100vh - var(--nf-rt-h,52px) - 32px) !important}
+/* Thank-you and 2026 pricing pages */
+.nf-page-hero{background:linear-gradient(135deg,#003857 0%,#002a42 100%);color:#fff;padding:5.5rem 1.5rem 4.5rem;text-align:center}
+.nf-page-hero .nf-wrap{max-width:820px}
+.nf-page-hero h1{color:#fff;font-size:44px;font-weight:700;line-height:1.15;margin:0 0 18px}
+.nf-page-hero h1 span{color:#f45b69}
+.nf-page-hero p{color:#dbe5ec;font-size:18px;line-height:1.7;margin:0 auto 28px;max-width:680px}
+.nf-page-hero .nf-eyebrow{color:#f45b69}
+.nf-hero-icon{display:inline-flex;align-items:center;justify-content:center;width:64px;height:64px;border-radius:50%;background:#f45b69;color:#fff;margin-bottom:18px}
+.nf-hero-icon svg{width:30px !important;height:30px !important}
+.nf-hero-btns{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.nf-btn-light{background:#fff;color:#003b5c;border:1px solid #fff}
+.nf-btn-light:hover,.nf-btn-light:focus{background:#003b5c;color:#fff;border-color:#fff}
+.nf-next{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin:0;padding:0;list-style:none;counter-reset:nfnext}
+.nf-next li{counter-increment:nfnext;background:#fff;border:1px solid #f1f5f9;border-radius:16px;padding:26px;box-shadow:0 4px 20px rgba(0,0,0,.05)}
+.nf-next li::before{content:counter(nfnext);display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;background:#003b5c;color:#fff;font-weight:700;margin-bottom:14px}
+.nf-next h3{color:#003b5c;font-size:17px;font-weight:700;margin:0 0 8px}
+.nf-next p{color:#475569;font-size:15px;line-height:1.65;margin:0}
+.nf-next a{color:#d64d63;font-weight:700}
+@media (max-width:1024px){.nf-next{grid-template-columns:1fr}}
+@media (max-width:767px){.nf-page-hero{padding:4rem 1rem 3.5rem}.nf-page-hero h1{font-size:32px}.nf-page-hero p{font-size:16px}}
 /* Review toggle (mockup only) */
 html{margin-top:var(--nf-rt-h,52px) !important}
 header{top:var(--nf-rt-h,52px) !important}
@@ -2744,12 +2768,12 @@ table.nf-table tr.nf-total td{background:#fff1f3 !important;font-weight:700;colo
 @media (max-width:1024px){.nf-cards{grid-template-columns:repeat(2,minmax(0,1fr))}.nf-steps{grid-template-columns:repeat(2,minmax(0,1fr))}.nf-split{grid-template-columns:1fr}}
 @media (max-width:767px){.nf-section{padding:3rem 1rem}.nf-cards,.nf-stats,.nf-steps{grid-template-columns:1fr}.nf-wrap h2.nf-h2{font-size:22px}table.nf-table{font-size:14px}.nf-tiers th:nth-child(3),.nf-tiers td:nth-child(3){display:none}.nf-tiers td:first-child{white-space:nowrap}table.nf-table thead tr th{white-space:normal}table.nf-table td,table.nf-table thead tr th{padding:10px 12px}}
 </style>
-<script type="application/ld+json" id="nf-faq-schema">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the initial investment (start-up cost)? Any hidden costs?", "acceptedAnswer": {"@type": "Answer", "text": "Your investment depends on the tier you choose, which sets the value of client contracts you start with. Every tier includes the commercial products start-up kit. Ongoing fees are a percentage of gross revenue plus small annual marketing and IT levies. Outside the franchise, budget for your vehicle, insurance, wages if you hire staff, and accounting. Members can log in to view the full investment schedule, or request the Franchise Information Guide. All franchise fees are set out in the Disclosure Document before you sign."}}, {"@type": "Question", "name": "What are the ongoing franchise fees?", "acceptedAnswer": {"@type": "Answer", "text": "Ongoing fees cover a royalty, account administration and operations support, charged as a percentage of gross revenue, plus annual marketing and IT levies. The exact figures are in the Franchise Information Guide and the Disclosure Document."}}, {"@type": "Question", "name": "Is an office cleaning franchise profitable?", "acceptedAnswer": {"@type": "Answer", "text": "It can be, but profit depends on your pricing, hours and labour costs, not revenue alone. After franchise fees, the rest of your revenue covers wages, consumables, your vehicle, insurance and tax. Commercial contracts are recurring, which makes income more predictable than one-off residential jobs. Model your numbers with an accountant using the Disclosure Document."}}, {"@type": "Question", "name": "Do I need cleaning or business experience?", "acceptedAnswer": {"@type": "Answer", "text": "No. Every franchisee is trained in commercial cleaning, infection control, workplace health and safety, industry standards and running a small business, then supported by Namoli's systems, processes and leadership team."}}, {"@type": "Question", "name": "How much control do franchisees have over their business?", "acceptedAnswer": {"@type": "Answer", "text": "A great deal. You can hire your own staff, choose the contracts you accept and take on as much work as you want, backed by Namoli's systems, processes, experienced leadership team and ongoing training."}}, {"@type": "Question", "name": "What's the defined franchise territory?", "acceptedAnswer": {"@type": "Answer", "text": "There is no exclusive franchise territory. You can operate anywhere in Queensland, provided the locations sit within the state territory outlined in your Franchise Agreement and Namoli can reasonably support operations there."}}, {"@type": "Question", "name": "How long is the initial term of the franchise agreement?", "acceptedAnswer": {"@type": "Answer", "text": "The initial term is 10 years. You can then renew for two further 10-year periods with zero renewal costs."}}, {"@type": "Question", "name": "Am I limited to office cleaning?", "acceptedAnswer": {"@type": "Answer", "text": "No. Namoli franchisees service a wide range of commercial clients, including offices, medical centres, childcare facilities, schools, industrial sites, retail and hospitality venues, provided they meet any required compliance or industry-specific standards."}}]}</script>
+<script type="application/ld+json" id="nf-faq-schema">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the initial investment (start-up cost)? Any hidden costs?", "acceptedAnswer": {"@type": "Answer", "text": "Your investment depends on the tier you choose, which sets the value of client contracts you start with. Every tier includes the commercial products start-up kit. Ongoing fees are a percentage of gross revenue plus small annual marketing and IT levies. Outside the franchise, budget for your vehicle, insurance, wages if you hire staff, and accounting. Request the Franchise Information Guide to get the full 2026 investment schedule. All franchise fees are set out in the Disclosure Document before you sign."}}, {"@type": "Question", "name": "What are the ongoing franchise fees?", "acceptedAnswer": {"@type": "Answer", "text": "Ongoing fees cover a royalty, account administration and operations support, charged as a percentage of gross revenue, plus annual marketing and IT levies. The exact figures are in the Franchise Information Guide and the Disclosure Document."}}, {"@type": "Question", "name": "Is an office cleaning franchise profitable?", "acceptedAnswer": {"@type": "Answer", "text": "It can be, but profit depends on your pricing, hours and labour costs, not revenue alone. After franchise fees, the rest of your revenue covers wages, consumables, your vehicle, insurance and tax. Commercial contracts are recurring, which makes income more predictable than one-off residential jobs. Model your numbers with an accountant using the Disclosure Document."}}, {"@type": "Question", "name": "Do I need cleaning or business experience?", "acceptedAnswer": {"@type": "Answer", "text": "No. Every franchisee is trained in commercial cleaning, infection control, workplace health and safety, industry standards and running a small business, then supported by Namoli's systems, processes and leadership team."}}, {"@type": "Question", "name": "How much control do franchisees have over their business?", "acceptedAnswer": {"@type": "Answer", "text": "A great deal. You can hire your own staff, choose the contracts you accept and take on as much work as you want, backed by Namoli's systems, processes, experienced leadership team and ongoing training."}}, {"@type": "Question", "name": "What's the defined franchise territory?", "acceptedAnswer": {"@type": "Answer", "text": "There is no exclusive franchise territory. You can operate anywhere in Queensland, provided the locations sit within the state territory outlined in your Franchise Agreement and Namoli can reasonably support operations there."}}, {"@type": "Question", "name": "How long is the initial term of the franchise agreement?", "acceptedAnswer": {"@type": "Answer", "text": "The initial term is 10 years. You can then renew for two further 10-year periods with zero renewal costs."}}, {"@type": "Question", "name": "Am I limited to office cleaning?", "acceptedAnswer": {"@type": "Answer", "text": "No. Namoli franchisees service a wide range of commercial clients, including offices, medical centres, childcare facilities, schools, industrial sites, retail and hospitality venues, provided they meet any required compliance or industry-specific standards."}}]}</script>
 </head>
 				
 	<body class="wp-singular page-template-default page page-id-1508739 wp-theme-launchpad-platform wp-child-theme-launchpad-platform-child page-banner-hidden sticky-header hb0 full-width-layout header-light footer-dark with-top-header page-franchise customize-support scrolled-up" cz-shortcut-listen="true">
 <!-- REVIEW TOGGLE: mockup only, remove before go-live -->
-<div id="nf-review-toggle" role="region" aria-label="Mockup version toggle"><span class="nf-rt-label">Gated pricing preview</span><span class="nf-rt-switch"><a href="index.html" aria-current="page">Logged out (public)</a><a href="member.html">Logged in (member)</a></span><span class="nf-rt-note">Simulates the member login for review. This toggle is not included when the page goes live.</span></div>
+<div id="nf-review-toggle" role="region" aria-label="Mockup version toggle"><span class="nf-rt-label">Gated pricing flow</span><span class="nf-rt-switch"><a href="index.html" aria-current="page">1. Franchise page</a><a href="thank-you.html">2. Thank-you page</a><a href="pricing-2026.html">3. 2026 pricing</a></span><span class="nf-rt-note">Preview of the form-gated pricing flow. This bar is not included when the pages go live.</span></div>
 <script>(function(){function s(){var t=document.getElementById("nf-review-toggle");if(t)document.documentElement.style.setProperty("--nf-rt-h",t.offsetHeight+"px")}s();window.addEventListener("load",s);window.addEventListener("resize",s)})();</script>
 
 
@@ -2792,7 +2816,7 @@ table.nf-table tr.nf-total td{background:#fff1f3 !important;font-weight:700;colo
 <li id="menu-item-1834466" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-1508739 current_page_item menu-item-1834466 active" role="treeitem"><a href="https://www.namoli.com.au/franchise/" aria-current="page">Franchise Opportunities</a></li>
 <li id="menu-item-248" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-248" role="treeitem"><a href="https://www.namoli.com.au/blog/">Care Blog</a></li>
 <li id="menu-item-1195" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1195" role="treeitem"><a href="https://www.namoli.com.au/contact/">Contact Us</a></li>
-<li id="menu-item-45563" class="mobile-login-menu menu-item menu-item-type-post_type menu-item-object-page menu-item-45563" role="treeitem"><a href="member.html#franchise-cost">Login</a></li>
+<li id="menu-item-45563" class="mobile-login-menu menu-item menu-item-type-post_type menu-item-object-page menu-item-45563" role="treeitem"><a href="https://www.namoli.com.au/member-login/">Login</a></li>
 <li id="menu-item-45599" class="mobile-portal-menu menu-item menu-item-type-post_type menu-item-object-page menu-item-45599" role="treeitem"><a href="https://www.namoli.com.au/portal/">Portal</a></li>
 </ul>
 				
@@ -2812,7 +2836,7 @@ table.nf-table tr.nf-total td{background:#fff1f3 !important;font-weight:700;colo
 <li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-1508739 current_page_item menu-item-1834466 active"><a href="https://www.namoli.com.au/franchise/" aria-current="page">Franchise Opportunities</a></li>
 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-248"><a href="https://www.namoli.com.au/blog/">Care Blog</a></li>
 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1195"><a href="https://www.namoli.com.au/contact/">Contact Us</a></li>
-<li class="mobile-login-menu menu-item menu-item-type-post_type menu-item-object-page menu-item-45563"><a href="member.html#franchise-cost">Login</a></li>
+<li class="mobile-login-menu menu-item menu-item-type-post_type menu-item-object-page menu-item-45563"><a href="https://www.namoli.com.au/member-login/">Login</a></li>
 <li class="mobile-portal-menu menu-item menu-item-type-post_type menu-item-object-page menu-item-45599"><a href="https://www.namoli.com.au/portal/">Portal</a></li>
 </ul></div></div><div id="nav_menu-4" class="widget widget_nav_menu"><div class="menu-main-menu-container"><ul id="menu-main-menu-2" class="menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-1361"><a href="https://www.namoli.com.au/">Home</a></li>
 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-249"><a href="https://www.namoli.com.au/about-us/">Our Approach</a></li>
@@ -2830,7 +2854,7 @@ table.nf-table tr.nf-total td{background:#fff1f3 !important;font-weight:700;colo
 <li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-1508739 current_page_item menu-item-1834466 active"><a href="https://www.namoli.com.au/franchise/" aria-current="page">Franchise Opportunities</a></li>
 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-248"><a href="https://www.namoli.com.au/blog/">Care Blog</a></li>
 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1195"><a href="https://www.namoli.com.au/contact/">Contact Us</a></li>
-<li class="mobile-login-menu menu-item menu-item-type-post_type menu-item-object-page menu-item-45563"><a href="member.html#franchise-cost">Login</a></li>
+<li class="mobile-login-menu menu-item menu-item-type-post_type menu-item-object-page menu-item-45563"><a href="https://www.namoli.com.au/member-login/">Login</a></li>
 <li class="mobile-portal-menu menu-item menu-item-type-post_type menu-item-object-page menu-item-45599"><a href="https://www.namoli.com.au/portal/">Portal</a></li>
 </ul></div></div>
 				
@@ -2857,7 +2881,7 @@ table.nf-table tr.nf-total td{background:#fff1f3 !important;font-weight:700;colo
 				<li><a href="https://au.linkedin.com/company/namoli-commercial-cleaning" rel="noopener" target="_blank"><span class="hidden">Linkedin</span><i class="fab fa-linkedin-in" aria-hidden="true"></i></a></li>
 			</ul>
 		</div> <ul id="menu-top-menu" class="vertical small-horizontal menu menu dropdown" data-responsive-menu="accordion medium-dropdown" role="menubar" data-t="cvmfqs-t" data-mutate="o7ifci-responsive-menu"><li id="menu-item-3563" class="my-account-btn members-btns menu-item menu-item-type-custom menu-item-object-custom menu-item-3563" role="menuitem"><a href="https://www.namoli.com.au/portal/">My Account</a></li>
-<li id="menu-item-3565" class="login-btn members-btns menu-item menu-item-type-custom menu-item-object-custom menu-item-3565" role="menuitem"><a href="member.html#franchise-cost">Login</a></li>
+<li id="menu-item-3565" class="login-btn members-btns menu-item menu-item-type-custom menu-item-object-custom menu-item-3565" role="menuitem"><a href="https://www.namoli.com.au/member-login/">Login</a></li>
 </ul><p></p>
 </div>
  
@@ -2896,7 +2920,7 @@ table.nf-table tr.nf-total td{background:#fff1f3 !important;font-weight:700;colo
 <li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-1508739 current_page_item menu-item-1834466 active" role="menuitem"><a href="https://www.namoli.com.au/franchise/" aria-current="page">Franchise Opportunities</a></li>
 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-248" role="menuitem"><a href="https://www.namoli.com.au/blog/">Care Blog</a></li>
 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1195" role="menuitem"><a href="https://www.namoli.com.au/contact/">Contact Us</a></li>
-<li class="mobile-login-menu menu-item menu-item-type-post_type menu-item-object-page menu-item-45563" role="menuitem"><a href="member.html#franchise-cost">Login</a></li>
+<li class="mobile-login-menu menu-item menu-item-type-post_type menu-item-object-page menu-item-45563" role="menuitem"><a href="https://www.namoli.com.au/member-login/">Login</a></li>
 <li class="mobile-portal-menu menu-item menu-item-type-post_type menu-item-object-page menu-item-45599" role="menuitem"><a href="https://www.namoli.com.au/portal/">Portal</a></li>
 </ul>
 						</div>
@@ -3075,12 +3099,11 @@ document.addEventListener("DOMContentLoaded", function(){
 <div class="nf-gate-teaser" aria-hidden="true"><table class="nf-table"><thead><tr><th>Tier</th><th>Starting monthly contracts</th><th>Annual contract value</th><th>Initial investment</th></tr></thead><tbody><tr><td>Tier 1</td><td>$#,###</td><td>$##,###</td><td>$##,###</td></tr><tr><td>Tier 2</td><td>$#,###</td><td>$##,###</td><td>$##,###</td></tr><tr><td>Tier 3</td><td>$#,###</td><td>$##,###</td><td>$##,###</td></tr><tr><td>Tier 4</td><td>$#,###</td><td>$##,###</td><td>$##,###</td></tr><tr><td>Tier 5</td><td>$#,###</td><td>$##,###</td><td>$##,###</td></tr><tr><td>Tier 6</td><td>$#,###</td><td>$##,###</td><td>$##,###</td></tr><tr><td>Tier 7</td><td>$#,###</td><td>$##,###</td><td>$##,###</td></tr><tr><td>Tier 8</td><td>$#,###</td><td>$##,###</td><td>$##,###</td></tr></tbody></table></div>
 <div class="nf-gate-card">
 <span class="nf-gate-lock" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></span>
-<span class="nf-k">Members only</span>
-<h3>See the full investment schedule</h3>
-<p>Log in or create a free account to view all 10 investment tiers, the ongoing fee breakdown and a worked example.</p>
-<div class="nf-gate-btns"><a class="nf-btn nf-btn-primary" href="member.html#franchise-cost">Log in to view pricing</a><a class="nf-btn nf-btn-ghost" href="member.html#franchise-cost">Create an account</a></div>
-<p class="nf-gate-alt">Prefer to talk it through? <a href="#contact-form">Request a discovery call</a> or download the Franchise Information Guide.</p>
-<p class="nf-mock-note">Mockup: both buttons preview the logged-in view. Live: /member-login/ and /register/.</p>
+<span class="nf-k">2026 franchise pricing</span>
+<h3>Get the full 2026 investment schedule</h3>
+<p>Request the Franchise Information Guide and we&rsquo;ll take you straight to the 2026 pricing: all 10 investment tiers, the ongoing fee breakdown and a worked example.</p>
+<div class="nf-gate-btns"><a class="nf-btn nf-btn-primary nf-open-guide" href="thank-you.html">Get the 2026 pricing</a><a class="nf-btn nf-btn-ghost" href="#contact-form">Request a discovery call</a></div>
+<p class="nf-mock-note">Mockup: this button skips the form and previews the thank-you page. Live: it opens the Franchise Information Guide form.</p>
 </div>
 </div>
 <div class="nf-ctas"><div class="wp-block-kadence-advancedbtn kb-buttons-wrap kb-btns1508739_763ee9-e3"><a class="kb-button kt-button button kb-btn1508739_e7e403-87 kt-btn-size-small kt-btn-width-type-auto kb-btn-global-fill kt-btn-has-text-true wp-block-kadence-singlebtn" href="#contact-form"><span class="kt-btn-inner-text">Request a discovery call</span></a></div><div class="guide-link-wrap" style="width:auto"><a href="https://www.namoli.com.au/franchise/#" class="open-form-btn"><span>Download the Franchise Information Guide &gt;</span></a></div></div>
@@ -3539,7 +3562,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
 <div class="wp-block-kadence-accordion alignnone"><div class="kt-accordion-wrap kt-accordion-id1508739_ac6b20-6b kt-accordion-has-8-panes kt-active-pane-0 kt-accordion-block kt-pane-header-alignment-left kt-accodion-icon-style-xclose kt-accodion-icon-side-right" style="max-width:none"><div class="kt-accordion-inner-wrap kt-accordion-initialized" data-allow-multiple-open="false" data-start-open="none">
 <div class="wp-block-kadence-pane kt-accordion-pane kt-accordion-pane-1 kt-pane1508739_8c9f5c-1c"><div class="kt-accordion-header-wrap"><button class="kt-blocks-accordion-header kt-acccordion-button-label-show kt-accordion-panel-active" type="button" id="kt-accordion-header-408128" aria-controls="kt-accordion-panel-408128" data-kt-accordion-header-id="0" aria-expanded="true"><span class="kt-blocks-accordion-title-wrap"><span class="kt-blocks-accordion-title">What is the initial investment (start-up cost)? Any hidden costs?</span></span><span class="kt-blocks-accordion-icon-trigger"></span></button></div><div class="kt-accordion-panel kt-accordion-panel-active" id="kt-accordion-panel-408128" aria-labelledby="kt-accordion-header-408128" role="region" data-panel-height="0px" style=""><div class="kt-accordion-panel-inner">
-<p class="wp-block-paragraph">Your investment depends on the tier you choose, which sets the value of client contracts you start with. Every tier includes the commercial products start-up kit. Ongoing fees are a percentage of gross revenue plus small annual marketing and IT levies. Outside the franchise, budget for your vehicle, insurance, wages if you hire staff, and accounting. Members can log in to view the full investment schedule, or request the Franchise Information Guide. All franchise fees are set out in the Disclosure Document before you sign.</p>
+<p class="wp-block-paragraph">Your investment depends on the tier you choose, which sets the value of client contracts you start with. Every tier includes the commercial products start-up kit. Ongoing fees are a percentage of gross revenue plus small annual marketing and IT levies. Outside the franchise, budget for your vehicle, insurance, wages if you hire staff, and accounting. Request the Franchise Information Guide to get the full 2026 investment schedule. All franchise fees are set out in the Disclosure Document before you sign.</p>
 </div></div></div>
 
 
@@ -4051,7 +4074,7 @@ var e="script#wp-emoji-settings",t=document.querySelector(e);if(!(t instanceof H
     <button type="button" class="franchise-close" aria-label="Close modal">×</button>
 
     <div class="form-container" style="display: block;">
-      <iframe src="assets/bv9CXKK0Xijfy4JYrQlO.html" class="franchise-iframe" data-initial-iframe-hidden="true" data-unique-id-mapped="true" id="ghl_embed___1" style="opacity: 1; visibility: visible; pointer-events: auto; position: relative; overflow: auto; height: 446px; display: block;" data-layout-iframe-id="ghl_embed___1" data-iframe-resizer-initialized="true" scrolling="yes"></iframe>
+      <iframe src="assets/bv9CXKK0Xijfy4JYrQlO.html" class="franchise-iframe" data-initial-iframe-hidden="true" data-unique-id-mapped="true" id="ghl_embed___1" style="opacity: 1; visibility: visible; pointer-events: auto; position: relative; overflow: auto; height: 446px; display: block;" data-layout-iframe-id="ghl_embed___1" data-iframe-resizer-initialized="true" scrolling="yes"></iframe><div class="nf-mock-submit"><a class="nf-btn nf-btn-primary" href="thank-you.html">Preview: submit form</a><span>Mockup only. Live: the form redirects to the thank-you page on submit.</span></div>
     </div>
 
     <div class="download-container" style="display:none; text-align:center;">
@@ -4067,7 +4090,7 @@ var e="script#wp-emoji-settings",t=document.querySelector(e);if(!(t instanceof H
     <button type="button" class="franchise-close" aria-label="Close modal">×</button>
 
     <div class="form-container">
-      <iframe src="assets/bv9CXKK0Xijfy4JYrQlO(1).html" class="franchise-iframe" data-initial-iframe-hidden="true" data-unique-id-mapped="true" id="ghl_embed___2" style="opacity: 1; visibility: visible; pointer-events: auto; position: relative; overflow: auto; height: 5px; display: block;" data-layout-iframe-id="ghl_embed___2" data-iframe-resizer-initialized="true" scrolling="yes"></iframe>
+      <iframe src="assets/bv9CXKK0Xijfy4JYrQlO(1).html" class="franchise-iframe" data-initial-iframe-hidden="true" data-unique-id-mapped="true" id="ghl_embed___2" style="opacity: 1; visibility: visible; pointer-events: auto; position: relative; overflow: auto; height: 5px; display: block;" data-layout-iframe-id="ghl_embed___2" data-iframe-resizer-initialized="true" scrolling="yes"></iframe><div class="nf-mock-submit"><a class="nf-btn nf-btn-primary" href="thank-you.html">Preview: submit form</a><span>Mockup only. Live: the form redirects to the thank-you page on submit.</span></div>
     </div>
 
     <div class="download-container" style="display:none; text-align:center;">

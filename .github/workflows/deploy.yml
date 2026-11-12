@@ -26,10 +26,11 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Build logged-out and logged-in views from source
+      - name: Build the form-gated pricing flow from source
         run: |
           python scripts/build_page.py source/franchise-original.html site/index.html nopricing
-          python scripts/build_page.py source/franchise-original.html site/member.html
+          python scripts/build_page.py source/franchise-original.html "$RUNNER_TEMP/priced.html"
+          python scripts/build_gated_pages.py site/index.html "$RUNNER_TEMP/priced.html" site
 
       - name: Configure Pages
         uses: actions/configure-pages@v5

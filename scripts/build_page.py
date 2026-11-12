@@ -66,7 +66,7 @@ faqs = [
 ]
 
 faqs_guest = list(faqs)
-faqs_guest[0] = (faqs[0][0], "Your investment depends on the tier you choose, which sets the value of client contracts you start with. Every tier includes the commercial products start-up kit. Ongoing fees are a percentage of gross revenue plus small annual marketing and IT levies. Outside the franchise, budget for your vehicle, insurance, wages if you hire staff, and accounting. Members can log in to view the full investment schedule, or request the Franchise Information Guide. All franchise fees are set out in the Disclosure Document before you sign.")
+faqs_guest[0] = (faqs[0][0], "Your investment depends on the tier you choose, which sets the value of client contracts you start with. Every tier includes the commercial products start-up kit. Ongoing fees are a percentage of gross revenue plus small annual marketing and IT levies. Outside the franchise, budget for your vehicle, insurance, wages if you hire staff, and accounting. Request the Franchise Information Guide to get the full 2026 investment schedule. All franchise fees are set out in the Disclosure Document before you sign.")
 faqs_guest[1] = (faqs[1][0], "Ongoing fees cover a royalty, account administration and operations support, charged as a percentage of gross revenue, plus annual marketing and IT levies. The exact figures are in the Franchise Information Guide and the Disclosure Document.")
 faqs_guest[2] = (faqs[2][0], "It can be, but profit depends on your pricing, hours and labour costs, not revenue alone. After franchise fees, the rest of your revenue covers wages, consumables, your vehicle, insurance and tax. Commercial contracts are recurring, which makes income more predictable than one-off residential jobs. Model your numbers with an accountant using the Disclosure Document.")
 if NP:
@@ -129,6 +129,30 @@ html{margin-top:0 !important}
 .nf-tag-row{text-align:center;margin:0 0 10px}
 .nf-tag{display:inline-block;vertical-align:middle;padding:3px 10px;border-radius:999px;background:#fff1f3;color:#d64d63;font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
 @media (max-width:767px){.nf-gate-card{position:relative;inset:auto;background:#fff}.nf-gate-teaser{display:none}.nf-gate-card h3{font-size:19px}}
+.nf-mock-submit{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px 14px;margin:14px 0 4px;padding:12px;border:1px dashed #f45b69;border-radius:8px;background:#fff7f8}
+.nf-mock-submit span{font-size:12px;color:#64748b;font-style:italic}
+.franchise-iframe{min-height:446px}
+.franchise-box{margin-top:calc(var(--nf-rt-h,52px) + 16px) !important;max-height:calc(100vh - var(--nf-rt-h,52px) - 32px) !important}
+/* Thank-you and 2026 pricing pages */
+.nf-page-hero{background:linear-gradient(135deg,#003857 0%,#002a42 100%);color:#fff;padding:5.5rem 1.5rem 4.5rem;text-align:center}
+.nf-page-hero .nf-wrap{max-width:820px}
+.nf-page-hero h1{color:#fff;font-size:44px;font-weight:700;line-height:1.15;margin:0 0 18px}
+.nf-page-hero h1 span{color:#f45b69}
+.nf-page-hero p{color:#dbe5ec;font-size:18px;line-height:1.7;margin:0 auto 28px;max-width:680px}
+.nf-page-hero .nf-eyebrow{color:#f45b69}
+.nf-hero-icon{display:inline-flex;align-items:center;justify-content:center;width:64px;height:64px;border-radius:50%;background:#f45b69;color:#fff;margin-bottom:18px}
+.nf-hero-icon svg{width:30px !important;height:30px !important}
+.nf-hero-btns{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.nf-btn-light{background:#fff;color:#003b5c;border:1px solid #fff}
+.nf-btn-light:hover,.nf-btn-light:focus{background:#003b5c;color:#fff;border-color:#fff}
+.nf-next{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin:0;padding:0;list-style:none;counter-reset:nfnext}
+.nf-next li{counter-increment:nfnext;background:#fff;border:1px solid #f1f5f9;border-radius:16px;padding:26px;box-shadow:0 4px 20px rgba(0,0,0,.05)}
+.nf-next li::before{content:counter(nfnext);display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;background:#003b5c;color:#fff;font-weight:700;margin-bottom:14px}
+.nf-next h3{color:#003b5c;font-size:17px;font-weight:700;margin:0 0 8px}
+.nf-next p{color:#475569;font-size:15px;line-height:1.65;margin:0}
+.nf-next a{color:#d64d63;font-weight:700}
+@media (max-width:1024px){.nf-next{grid-template-columns:1fr}}
+@media (max-width:767px){.nf-page-hero{padding:4rem 1rem 3.5rem}.nf-page-hero h1{font-size:32px}.nf-page-hero p{font-size:16px}}
 /* Review toggle (mockup only) */
 html{margin-top:var(--nf-rt-h,52px) !important}
 header{top:var(--nf-rt-h,52px) !important}
@@ -217,7 +241,6 @@ guide_link = '<div class="guide-link-wrap" style="width:auto"><a href="https://w
 COST = f'''
 <section class="nf-section" id="franchise-cost" aria-labelledby="nf-cost-h">
 <div class="nf-wrap">
-<p class="nf-member-banner"><span>&#10003;</span> You&rsquo;re logged in. The full investment schedule is unlocked.</p>
 <p class="nf-eyebrow">Your investment</p>
 <h2 class="nf-h2" id="nf-cost-h">How Much Does an Office Cleaning Franchise Cost?</h2>
 <p class="nf-lead">Most cleaning franchisors publish a &ldquo;from&rdquo; price with an asterisk. We publish the full schedule. Choose how much client revenue you start with and your initial investment scales with it. Every tier includes the same four things:</p>
@@ -229,7 +252,6 @@ COST = f'''
 <div class="nf-card"><span class="nf-k">Built into your fees</span><h3>Admin and operations backing</h3><p>Account administration and operations support sit behind every contract, so you focus on the work and the client relationship.</p></div>
 </div>
 
-<p class="nf-tag-row"><span class="nf-tag">Members only</span></p>
 <div class="nf-table-wrap">
 <table class="nf-table nf-tiers">
 <caption class="screen-reader-text">Namoli franchise tier pricing schedule, all figures exclude GST</caption>
@@ -245,7 +267,7 @@ COST = f'''
 <div class="nf-stat"><strong>14 days</strong><span>Minimum gap between your disclosure meeting and investing. Time to get independent advice, by design.</span></div>
 </div>
 
-<h3 class="nf-h3">Ongoing Franchise Fees, in Plain Numbers <span class="nf-tag">Members only</span></h3>
+<h3 class="nf-h3">Ongoing Franchise Fees, in Plain Numbers</h3>
 <div class="nf-split">
 <div class="nf-table-wrap">
 <table class="nf-table">
@@ -294,12 +316,11 @@ if NP:
 <div class="nf-gate-teaser" aria-hidden="true"><table class="nf-table"><thead><tr><th>Tier</th><th>Starting monthly contracts</th><th>Annual contract value</th><th>Initial investment</th></tr></thead><tbody>{TEASER}</tbody></table></div>
 <div class="nf-gate-card">
 <span class="nf-gate-lock" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></span>
-<span class="nf-k">Members only</span>
-<h3>See the full investment schedule</h3>
-<p>Log in or create a free account to view all 10 investment tiers, the ongoing fee breakdown and a worked example.</p>
-<div class="nf-gate-btns"><a class="nf-btn nf-btn-primary" href="member.html#franchise-cost">Log in to view pricing</a><a class="nf-btn nf-btn-ghost" href="member.html#franchise-cost">Create an account</a></div>
-<p class="nf-gate-alt">Prefer to talk it through? <a href="#contact-form">Request a discovery call</a> or download the Franchise Information Guide.</p>
-<p class="nf-mock-note">Mockup: both buttons preview the logged-in view. Live: /member-login/ and /register/.</p>
+<span class="nf-k">2026 franchise pricing</span>
+<h3>Get the full 2026 investment schedule</h3>
+<p>Request the Franchise Information Guide and we&rsquo;ll take you straight to the 2026 pricing: all 10 investment tiers, the ongoing fee breakdown and a worked example.</p>
+<div class="nf-gate-btns"><a class="nf-btn nf-btn-primary nf-open-guide" href="thank-you.html">Get the 2026 pricing</a><a class="nf-btn nf-btn-ghost" href="#contact-form">Request a discovery call</a></div>
+<p class="nf-mock-note">Mockup: this button skips the form and previews the thank-you page. Live: it opens the Franchise Information Guide form.</p>
 </div>
 </div>
 <div class="nf-ctas">{btn_primary}{guide_link}</div>
@@ -418,19 +439,17 @@ _dupes = [f.replace('<figure ', '<figure aria-hidden="true" ', 1).replace(' alt=
 _track = '<div class="nf-marquee-track">' + ''.join(_figs) + ''.join(_dupes) + '</div>\n'
 h = h[:_cg.start()] + _cg.group(1)[:-1] + ' nf-marquee"' + _cg.group(2) + _track + _cg.group(4) + h[_cg.end():]
 
-# ---------------- header login link: simulate member state ----------------
-if NP:
-    h = h.replace('<a href="https://www.namoli.com.au/member-login/">Login</a>', '<a href="member.html#franchise-cost">Login</a>')
-else:
-    h = h.replace('<a href="https://www.namoli.com.au/member-login/">Login</a>', '<a href="index.html">Log out</a>')
+# ---------------- guide form modal: mockup-only "submit" preview ----------------
+
+h, _nmod = re.subn(r'(</iframe>)(\s*</div>\s*<div class="download-container")', r'\1<div class="nf-mock-submit"><a class="nf-btn nf-btn-primary" href="thank-you.html">Preview: submit form</a><span>Mockup only. Live: the form redirects to the thank-you page on submit.</span></div>\2', h)
 
 # ---------------- review toggle (mockup only) ----------------
-_cur_out, _cur_in = (' aria-current="page"', '') if NP else ('', ' aria-current="page"')
+_cur = ' aria-current="page"' 
 TOGGLE = ('\n<!-- REVIEW TOGGLE: mockup only, remove before go-live -->\n'
           '<div id="nf-review-toggle" role="region" aria-label="Mockup version toggle">'
-          '<span class="nf-rt-label">Gated pricing preview</span>'
-          '<span class="nf-rt-switch"><a href="index.html"' + _cur_out + '>Logged out (public)</a><a href="member.html"' + _cur_in + '>Logged in (member)</a></span>'
-          '<span class="nf-rt-note">Simulates the member login for review. This toggle is not included when the page goes live.</span></div>\n'
+          '<span class="nf-rt-label">Gated pricing flow</span>'
+          '<span class="nf-rt-switch"><a href="index.html"' + _cur.rstrip() + '>1. Franchise page</a><a href="thank-you.html">2. Thank-you page</a><a href="pricing-2026.html">3. 2026 pricing</a></span>'
+          '<span class="nf-rt-note">Preview of the form-gated pricing flow. This bar is not included when the pages go live.</span></div>\n'
           '<script>(function(){function s(){var t=document.getElementById("nf-review-toggle");if(t)document.documentElement.style.setProperty("--nf-rt-h",t.offsetHeight+"px")}s();window.addEventListener("load",s);window.addEventListener("resize",s)})();</script>\n')
 h = re.sub(r'(<body\b[^>]*>)', lambda m: m.group(1) + TOGGLE, h, count=1)
 
